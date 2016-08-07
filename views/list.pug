@@ -1,0 +1,22 @@
+style
+  | table td:first-child { width: 100%; }
+  | table td:last-child button { width: 21px; }
+  | table i { margin-right: 5px; }
+div.row
+  div.col-xs-offset-4.col-xs-4
+    table.table.table-striped
+      tr(ng-repeat="f in fruits")
+        td
+          i.fa.fa-apple
+          span {{f.name}}
+        td
+          button.btn.btn-xs.btn-danger(ng-click="delete(f)")
+            i.fa.fa-trash
+    hr
+div.row
+  div.col-xs-offset-5.col-xs-2
+    form(ng-submit="add()")
+      div.form-group
+        label Fruit name
+        input.form-control(type="text", ng-model="name")
+      button.btn.btn-primary.btn-block(type="submit") Add
